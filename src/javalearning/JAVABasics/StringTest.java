@@ -48,6 +48,23 @@ public class StringTest extends Throwable {
 		v2.stream().forEach(System.out::println);
 		System.out.println("After cloning the object ........for V3");
 		v3.stream().forEach(System.out::println);
+		
+		String a1 ="Vinod";
+		String a2 = new String("Vinod");
+		String a3 = new String("Vinod");
+		String a4 = "Vinod";
+		
+		System.out.println("====================string test=====================");
+		System.out.println("a1.equals(a4)=>"+a1.equals(a4));
+		System.out.println("a2.equals(a3)=>"+a2.equals(a3));
+		System.out.println("a1.equals(a2)=>"+a1.equals(a2));
+		System.out.println("a2==a3=>"+a2==a3);
+		System.out.println("a1==a4=>"+a1==a4);
+		System.out.println("a1==a2=>"+a1==a2);
+		System.out.println("a1.compareTo(a4)=>"+a1.compareTo(a4));
+		System.out.println("a1.compareTo(a2)=>"+a1.compareTo(a2));
+		System.out.println("a2.compareTo(a3)=>"+a2.compareTo(a3));
+		
 
 	}
 

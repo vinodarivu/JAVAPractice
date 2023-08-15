@@ -62,7 +62,7 @@ class SingleObject implements Cloneable, Serializable {
 		return new CloneNotSupportedException();
 	}
 
-	private static class ProcessSingleton {
+	private static final class ProcessSingleton {
 		private static final SingleObject so = new SingleObject();
 	}
 

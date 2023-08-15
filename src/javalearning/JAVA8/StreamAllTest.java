@@ -6,8 +6,9 @@
 package javalearning.JAVA8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collector;
+import java.util.Optional;
 /**
  *
  * @author U6032545
@@ -38,6 +39,14 @@ public class StreamAllTest {
 				.forEach(System.out::println);
 		int i = Stream.iterate(10, element -> element - 1).filter(element->element>0).limit(9).reduce(1,(sum,element)->sum*element);
 		System.out.println("fibonanci value ===>"+i);
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        // Using reduce to find the sum of elements
+        Optional<Integer> sumOptional = numbers.stream().reduce((x, y) -> x + y);
+        int sum = sumOptional.orElse(0); // Default value if the stream is empty
+
+        System.out.println("Sum of elements: " + sum);
+		
 		productsList.stream().filter(product -> product.price > 30000)
 				.forEach(product -> System.out.println(product.name));
 
@@ -52,6 +61,7 @@ public class StreamAllTest {
 		al.add("kumar");
 		al.add("suresh");
 		al.add("ramesh");
+		al.add("v");
 
 		al.stream().filter(p -> p.length() > 2).collect(Collectors.toSet()).forEach(System.out::println);
 		;

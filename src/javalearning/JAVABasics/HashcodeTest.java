@@ -56,7 +56,7 @@ class HashCodeOveride{
 	    System.out.println(t1==t3);
 	    System.out.println(t2==t3);
 	    System.out.println(t1==t2);
-	    t1.equals(t2);
+	    System.out.println("t1.equals(t2)===>"+t1.equals(t2));
 	}
      @Override
      public int hashCode() {

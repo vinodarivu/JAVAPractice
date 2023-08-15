@@ -41,6 +41,8 @@ class Employee implements Comparable<Employee> {
         this.id = id;
         
     }
+
+	
     
     @Override
     public int compareTo(Employee o) {
@@ -70,7 +72,7 @@ public class ComparableCompareToTest {
 //         al.add("suresh");
 //         al.add("amit");
 //         al.add("winith");
-        Collections.sort(al);        
+        Collections.sort(a1);        
         al.forEach((n) -> System.out.println(n));
         
     }

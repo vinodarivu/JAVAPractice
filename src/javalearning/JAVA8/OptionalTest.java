@@ -43,6 +43,7 @@ public class OptionalTest {
 		str1[9] = "ramesh";
 		// str1[10] = "sunil";
 		Optional<String> chckNull = Optional.ofNullable(str1[1]);
+		System.out.println("Optional.ofNullable(str1[1])====>" + Optional.ofNullable(str1[1]));
 		chckNull.ifPresent(System.out::println);// If a value is present, invoke the specified consumer with the value,
 												// otherwise do nothing.
 
@@ -55,6 +56,7 @@ public class OptionalTest {
 		Optional<String> value = Optional.of(stringArray[5]);
 		// If value is present, it returns an Optional otherwise returns an empty
 		// Optional
+		System.out.println("Optional.of(stringArray[5])"+Optional.of(stringArray[5]));
 		System.out.println("Filtered value: " + value.filter((s) -> s.equals("Abc")));
 		System.out.println("Filtered value: " + value.filter((s) -> s.equals("JAVA OPTIONAL CLASS EXAMPLE")));
 		// It returns value of an Optional. if value is not present, it throws an

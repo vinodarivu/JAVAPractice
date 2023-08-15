@@ -6,7 +6,7 @@ class Customer {
 	synchronized void withdraw(int amount) {
 		System.out.println("going to withdraw...");
 
-		if (this.amount < amount) {
+		while(this.amount < amount) {
 			System.out.println("Less balance; waiting for deposit...");
 			try {
 				wait();
@@ -18,9 +18,9 @@ class Customer {
 	}
 	
 	synchronized void withdraw1(int amount) {
-		System.out.println("going to withdraw...");
+		System.out.println("going to withdraw... in withdraw1");
 
-		if (this.amount < amount) {
+		while(this.amount < amount) {
 			System.out.println("Less balance; waiting for deposit... in withdraw1");
 			try {
 				wait();
@@ -56,7 +56,7 @@ class DeadLockResolvedByWait {
 		}.start();
 		new Thread() {
 			public void run() {
-				c.deposit(10000);
+				c.deposit(20000);
 			}
 		}.start();
 

@@ -5,6 +5,7 @@
  */
 package javalearning.Exceptions;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -18,15 +19,12 @@ If the superclass method declares an exception
 If the superclass method declares an exception, subclass overridden method can declare same, subclass exception or no exception but cannot declare parent exception.*/
 class ParentClass {
 
-    public void hello() throws IOException {
+    public void hello() throws FileNotFoundException {
     }
 
 }
 
-class A
-{
-public void hi()throws RuntimeException{}	
-}
+
 
 public class ParentExceptionTest extends ParentClass {
 
@@ -35,9 +33,9 @@ public class ParentExceptionTest extends ParentClass {
     	System.out.println("hello");
 
     }
-    public static void main(String args[]) {
+    public static void main(String args[]) throws FileNotFoundException {
     	ParentClass pc = new ParentExceptionTest();
-    	//pc.hello();
+    	pc.hello();
     	
     } 
 

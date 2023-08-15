@@ -68,6 +68,7 @@ In the following example, we are using reduce() method, which is used to sum of 
                 .map(product -> product.price)
                 .reduce(0.0f, (sum, price) -> sum + price);   // accumulating price  
         System.out.println(totalPrice);
+       
         
          System.out.println("==================================================");
         // More precise code   

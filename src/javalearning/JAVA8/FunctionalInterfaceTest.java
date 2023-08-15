@@ -42,7 +42,7 @@ interface sayable {
 
 public class FunctionalInterfaceTest implements sayable ,Doable{
 	public void doIt() {
-		System.out.println("chile class");
+		System.out.println("child class");
 	}
     public void say(String msg) {
         System.out.println(msg);

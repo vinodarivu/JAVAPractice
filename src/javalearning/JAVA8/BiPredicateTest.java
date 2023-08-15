@@ -6,7 +6,7 @@ import java.util.function.BiPredicate;
 import java.util.stream.Collectors;
 
 /*
- * It is a functional interface which represents a predicate (boolean-valued function) of one argument. 
+ * It is a functional interface which represents a predicate (boolean-valued function) of Two argument. 
  * It is defined in the java.util.
  * function package and contains test() a functional method.
  * */
@@ -37,11 +37,12 @@ public class BiPredicateTest {
 		// chaining with or
 		List<Domain> result4 = filterBadDomain(domains, bi.or((domain, x) -> domain.equalsIgnoreCase("microsoft.com")));
 		System.out.println(result4); // google.com, mkyong.com, microsoft.com
+		
 
 	}
 
 	public static <T extends Domain> List<T> filterBadDomain(List<T> list, BiPredicate<String, Integer> biPredicate) {
-
+		
 		return list.stream().filter(x -> biPredicate.test(x.getName(), x.getScore())).collect(Collectors.toList());
 
 	}

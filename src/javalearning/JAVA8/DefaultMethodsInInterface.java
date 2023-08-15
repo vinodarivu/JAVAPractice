@@ -37,6 +37,29 @@ interface TestInterface {
 	void sayMore(String msg);
 }
 
+
+
+class ImplementInterfaceTest implements TestInterface {
+
+	@Override
+	public void sayMore(String msg) {
+		System.out.println("inside saymore ImplementInterfaceTest");
+
+	}
+
+	@Override
+	public void say() {
+		System.out.println("inside say default method ImplementInterfaceTest");
+
+	}
+	
+	
+	public static void test() {
+		System.out.println("inside test static method ImplementInterfaceTest");
+
+	}
+
+}
 public class DefaultMethodsInInterface {
 
 	public static void main(String args[]) {
@@ -49,6 +72,7 @@ public class DefaultMethodsInInterface {
 		DefaultMethodsInInterface dmi = new DefaultMethodsInInterface();
 		dmi.say();
 		TestInterface.test();
+		dmi.test();
 		
 		
 		TestInterface testInt = new ImplementInterfaceTest();
@@ -65,27 +89,6 @@ public class DefaultMethodsInInterface {
 
 	public void say() { // implementing abstract method
 		System.out.println("child say default method called");
-	}
-
-}
-
-class ImplementInterfaceTest implements TestInterface {
-
-	@Override
-	public void sayMore(String msg) {
-		System.out.println("inside saymore ImplementInterfaceTest");
-
-	}
-
-	@Override
-	public void say() {
-		System.out.println("inside say default method ImplementInterfaceTest");
-
-	}
-	
-	public void test() {
-		System.out.println("inside test static method ImplementInterfaceTest");
-
 	}
 
 }
