@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class MissingRepeatNumbersinArray {
 
     static int[] values = {18, 2, 3, 4, 5, 6, 7, 8, 7, 543, 43453, 5, 18, 3, 2, 6};
-    static int[] smallest = {3, 6, 23, 1, 4, 89, 67, 33, 44, 66, 77, 88, 99, 22, 90, 80, 70, 60, 40};
+    static int[] smallest = {3, 6, 23, 1, 4, 89, 67, 33, 44,1, 66, 77, 88, 99, 22, 90, 80, 70, 60, 40,10111};
     static int length = values.length;
     static int lengthSmallest = smallest.length;
 

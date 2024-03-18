@@ -13,7 +13,8 @@ package HackathonCode;
 public class IBMagicNumber {
 
 	public static void main(String[] args) {
-		int num = 163;
+		for(int i=1;i<100000;i++) {
+		int num = i;
 		int sumOfDigits = 0;
 		while (num > 0 || sumOfDigits > 9) {
 			if (num == 0) {
@@ -26,10 +27,8 @@ public class IBMagicNumber {
 
 		// If sum is 1, original number is magic number
 		if (sumOfDigits == 1) {
-			System.out.println("Magic number");
-		} else {
-			System.out.println("Not magic number");
-		}
+			System.out.println("Magic number"+i);
+		}}
 	}
 
 }

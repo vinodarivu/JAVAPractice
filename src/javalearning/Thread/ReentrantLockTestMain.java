@@ -63,7 +63,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors; 
 import java.util.concurrent.locks.ReentrantLock; 
   
-public class ReentrantLockTest implements Runnable 
+ class ReentrantLockTest implements Runnable 
 { 
   String name; 
   ReentrantLock re; 
@@ -157,7 +157,7 @@ public class ReentrantLockTest implements Runnable
   } 
 } 
   
- class test 
+ public class ReentrantLockTestMain 
 { 
   static final int MAX_T = 2; 
   public static void main(String[] args) 

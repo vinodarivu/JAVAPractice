@@ -23,7 +23,7 @@ import java.util.Collections;
 7) it will be inside  in java.lang.package;
 
 */
-class Employee implements Comparable<Employee> {
+class Employee implements Comparable<Employee>{
     
     private int age;
     private String name;
@@ -56,6 +56,7 @@ class Employee implements Comparable<Employee> {
             
         }
     }
+
     
 }
 
@@ -72,7 +73,9 @@ public class ComparableCompareToTest {
 //         al.add("suresh");
 //         al.add("amit");
 //         al.add("winith");
-        Collections.sort(a1);        
+        Collections.sort(al);        
+        al.forEach((n) -> System.out.println(n));
+        Collections.sort(al);        
         al.forEach((n) -> System.out.println(n));
         
     }

@@ -56,7 +56,7 @@ public class CollectionsMethods {
             System.out.println(ts);
 
         }
-        System.out.println("Linked list  Collection reference : retainAll Methods");
+        System.out.println("Linked list  Collection reference : retainAll Methods-- delete the element which are not part of that collection");
         collection1.retainAll(col);
         for (String ts : collection1) {
             System.out.println(ts);

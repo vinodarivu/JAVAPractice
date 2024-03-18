@@ -102,7 +102,7 @@ In the following example, we are using reduce() method, which is used to sum of 
          System.out.println("========count==========================================");
          
             // count number of products based on the filter  
-        long count = productsList.stream()  
+        long count = productsList.stream()
                     .filter(product->product.price<30000)  
                     .count(); 
          System.out.println("================================================== "+count);

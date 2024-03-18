@@ -24,7 +24,7 @@ public class HashMapTest {
         hm.put("10", "rajesh");
         hm.put("5", "busineni");
 
-        Set s = hm.entrySet();
+        Set<Map.Entry<String, String>> s = hm.entrySet();
         Iterator it = s.iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();

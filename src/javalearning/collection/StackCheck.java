@@ -5,7 +5,6 @@
  */
 package javalearning.collection;
 
-import java.util.Collection;
 import java.util.Stack;
 
 /**
@@ -30,6 +29,11 @@ public class StackCheck {
          sc.forEach(n -> {
             System.out.println(n);
         });
+         
+         Stack emptyStack = new Stack<>();
+         System.out.println("--------------pop on EmptyStack--------------");
+         emptyStack.pop();
+         
          
          
         

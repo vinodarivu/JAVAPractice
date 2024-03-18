@@ -4,7 +4,7 @@ public class ReverseAString {
 
 	public static void main(String[] args) {
 		// Input String
-		String str = "Welcome to InterviewBit";
+		String str = "HELLO VINODH KUMAR BUSINENI";
 
 		// Pointers.
 		int i = 0, j = str.length() - 1;
@@ -24,3 +24,5 @@ public class ReverseAString {
 	}
 
 }
+
+

@@ -5,22 +5,30 @@
  */
 package javalearning.Exceptions;
 
-import java.io.IOException;
+class MyOwnUnCheckedException extends RuntimeException {
 
-class myOwnUnCheckedException extends RuntimeException {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2376996570710832L;
 
-    public myOwnUnCheckedException(String s) {
-        super(s);
+	public MyOwnUnCheckedException(String s) {
+		super(s);
 
-    }
+	}
 }
 
-class myOwnCheckedException extends Exception {
+class MyOwnCheckedException extends Exception {
 
-    public myOwnCheckedException(String s) {
-        super(s);
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6777532825400870971L;
 
-    }
+	public MyOwnCheckedException(String s) {
+		super(s);
+
+	}
 
 }
 
@@ -30,39 +38,39 @@ class myOwnCheckedException extends Exception {
  */
 public class CustomExceptionProp {
 
-    void m() throws myOwnCheckedException {
-        throw new myOwnCheckedException("device error");//checked exception  
-    }
+	void m() throws MyOwnCheckedException {
+		throw new MyOwnCheckedException("device error");// checked exception
+	}
 
-    void n() throws myOwnCheckedException {
-        m();
-    }
+	void n() throws MyOwnCheckedException {
+		m();
+	}
 
-    void p() throws myOwnCheckedException,NullPointerException {
+	void p() throws MyOwnCheckedException, NullPointerException {
 
-        n();
+		n();
 
-    }
+	}
 
-    void m1() {
-        throw new myOwnUnCheckedException("device error");//checked exception  
-    }
+	void m1() {
+		throw new MyOwnUnCheckedException("device error");// checked exception
+	}
 
-    void n1() {
-        m1();
-    }
+	void n1() {
+		m1();
+	}
 
-    void p1() {
+	void p1() {
 
-        n1();
+		n1();
 
-    }
+	}
 
-    public static void main(String args[]) throws myOwnCheckedException {
-        CustomExceptionProp obj = new CustomExceptionProp();
-        obj.p();
-        obj.p1();
-        System.out.println("normal flow");
-    }
+	public static void main(String args[]) throws MyOwnCheckedException {
+		CustomExceptionProp obj = new CustomExceptionProp();
+		obj.p();
+		obj.p1();
+		System.out.println("normal flow");
+	}
 
 }

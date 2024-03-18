@@ -16,10 +16,10 @@ import java.util.LinkedList;
 //peek:first element
 //peek first : return first , null if empty
 //peek last : return last , null if empty
-//poll: remove first element
+//poll: remove first element and retrieve the element
 //pollFirst: remove first element or null returns
 //pollLast:remove last element return null if a list is empty
-//pop:remove first element and retrieve the element
+//pop:remove first element and retrieve the element -> Give exception on empty list
 public class LinkedListTest {
 
 	public static void main(String as[]) {
@@ -34,11 +34,11 @@ public class LinkedListTest {
 		Collections.sort(ls, Collections.reverseOrder());
 
 		System.out.println("ls.element()===>" + ls.element());
-		
+
 		System.out.println("===all elements====");
-		ls.forEach(n->System.out.println(n));
+		ls.forEach(n -> System.out.println(n));
 		System.out.println("================");
-		
+
 		Collections.sort(ls, Comparator.reverseOrder());
 
 		System.out.println("ls.element()===>" + ls.element());
@@ -76,18 +76,20 @@ public class LinkedListTest {
 		System.out.println(ls.peek());
 
 		LinkedList emptyOne = new LinkedList();
-		System.out.println("-----peekFirst()-----------");
+		System.out.println("-----peekFirst() on EmptyList-----------");
 		System.out.println(emptyOne.peekFirst());
-		System.out.println("-----peekLast()-----------");
+		System.out.println("-----peekLast() on EmptyList-----------");
 		System.out.println(emptyOne.peekLast());
 
 		System.out.println("-----poll()-----------");
 		System.out.println(ls.poll());
+		System.out.println("-----Empty Collection poll()-----------");
+		System.out.println(emptyOne.poll());
 
-		System.out.println("-----pollFirst()-----------");
+		System.out.println("-----pollFirst() on EmptyOne-----------");
 		System.out.println(emptyOne.pollFirst());
 
-		System.out.println("-----pollLast()-----------");
+		System.out.println("-----pollLast() on EmptyOne-----------");
 		System.out.println(emptyOne.pollLast());
 
 		System.out.println("-----before pop()-----------");
@@ -97,11 +99,20 @@ public class LinkedListTest {
 
 		System.out.println("-----pop()-----------");
 		System.out.println(ls.pop());
-
+		
 		System.out.println("********after Poping*********");
 		ls.forEach(n -> {
 			System.out.println(n);
 		});
+
+		try {
+			System.out.println("-----Empty pop()-----------");
+			System.out.println(emptyOne.pop());
+		} catch (Exception e) {
+			System.out.println("!!!!!!!!!!!!should not use POP method on empty collection LinkedList===>" + e);
+		}
+
+		
 
 		System.out.println("*********************----NULL SCENARIO----*******************");
 		LinkedList<String> lsNull = new LinkedList<String>();

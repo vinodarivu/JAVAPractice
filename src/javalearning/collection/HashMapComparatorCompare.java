@@ -28,7 +28,7 @@ import java.util.Set;
  * It provides multiple sorting sequences, i.e., you can sort the elements on
  * the basis of any data member, for example, rollno, name, age or anything else
  */
-class Student {
+class EmployeeHM {
 
 	int rollno;
 	String name;
@@ -59,49 +59,59 @@ class Student {
 
 	int age;
 
-	Student(int rollno, String name, int age) {
+	EmployeeHM(int rollno, String name, int age) {
 		this.rollno = rollno;
 		this.name = name;
 		this.age = age;
 	}
 }
 
-class NameComparator implements Comparator<Map.Entry<Integer, Student>> {
+class NameComparatorEmp implements Comparator<Map.Entry<Integer, EmployeeHM>> {
 
 	@Override
-	public int compare(Entry<Integer, Student> o1, Entry<Integer, Student> o2) {
+	public int compare(Entry<Integer, EmployeeHM> o1, Entry<Integer, EmployeeHM> o2) {
 		return o1.getValue().getName().compareTo(o2.getValue().getName());
 
 	}
 }
 
-public class ComparatorCompare {
+public class HashMapComparatorCompare {
 
 	public static void main(String args[]) {
 
-		HashMap<Integer, Student> hm = new HashMap<>();
-		hm.put(3, new Student(101, "Vijay", 23));
-		hm.put(2, new Student(106, "Ajay", 27));
-		hm.put(6, new Student(105, "Jai", 21));
-		hm.put(1, new Student(105, "ZEEVAN", 31));
-		hm.put(5, new Student(105, "Vihaan", 31));
-		hm.put(9, new Student(105, "Agastya", 31));
+		HashMap<Integer, EmployeeHM> hm = new HashMap<>();
+		hm.put(3, new EmployeeHM(101, "Vijay", 23));
+		hm.put(2, new EmployeeHM(106, "Ajay", 27));
+		hm.put(6, new EmployeeHM(105, "Jai", 21));
+		hm.put(1, new EmployeeHM(105, "ZEEVAN", 31));
+		hm.put(5, new EmployeeHM(105, "Vihaan", 31));
+		hm.put(9, new EmployeeHM(105, "Agastya", 31));
 
 		System.out.println("==========before Sorting========");
-		Set<Map.Entry<Integer, Student>> hs = hm.entrySet();
+		Set<Map.Entry<Integer, EmployeeHM>> hs = hm.entrySet();
 
-		for (Map.Entry<Integer, Student> me : hs) {
+		for (Map.Entry<Integer, EmployeeHM> me : hs) {
 			System.out.println(me.getKey() + "::::" + me.getValue().getName());
 		}
 
 		System.out.println("=======Sorting by Name========");
 
-		List<Map.Entry<Integer, Student>> hsName = new ArrayList(hm.entrySet());
-		Collections.sort(hsName, new NameComparator());
+		List<Map.Entry<Integer, EmployeeHM>> hsName = new ArrayList(hm.entrySet());
+		Collections.sort(hsName, new NameComparatorEmp());
 
-		for (Map.Entry<Integer, Student> me1 : hsName) {
+		for (Map.Entry<Integer, EmployeeHM> me1 : hsName) {
 			System.out.println(me1.getKey() + "::::" + me1.getValue().getName());
 		}
+
+		// Different ways
+		// Sorting by keys
+		System.out.println("comparingByKey()=======>");
+		hm.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+
+		System.out.println("comparingByKey()===By Descending order====>");
+		hm.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder())).forEach(System.out::println);
+		System.out.println("comparingByValue()===By Descending order====>");
+		
 
 	}
 

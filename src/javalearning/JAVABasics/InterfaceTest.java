@@ -49,7 +49,7 @@ public class InterfaceTest {
     public static void main(String args[]) {
         parentInterface pI = new SubclassInter();
         pI.defaultMethod();
-        //pI.staticMethod(); 
+       // pI.staticMethod(); 
     }
 
 }
