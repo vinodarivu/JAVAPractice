@@ -44,10 +44,16 @@ public class StreamFilter {
         productsList.add(new Product(4, "Sony Laptop", 28000f));
         productsList.add(new Product(5, "Apple Laptop", 90000f));
          System.out.println("==================================================");
-        List<Float> productPriceList2 = productsList.stream().filter(p -> p.price > 0000)// filtering data  
+        List<Float> productPriceList2 = productsList.stream().filter(p -> p.price > 10000)// filtering data  
                 .map(p -> p.price) // fetching price  
                 .collect(Collectors.toList()); // collecting as list  
         System.out.println(productPriceList2);
+        
+       
+        Map<Integer,String> productPriceFilterMap =   
+                productsList.stream().filter(p->p.getPrice()>1000)  
+                            .collect(Collectors.toMap(p->p.id, p->p.name)); 
+        System.out.println(productPriceFilterMap);
          System.out.println("==================================================");
         
         

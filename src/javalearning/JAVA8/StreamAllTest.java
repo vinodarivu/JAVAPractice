@@ -23,21 +23,52 @@ public class StreamAllTest {
 				.forEach(System.out::println);
 
 		System.out.println("***************************************************************");
+		
+		/*
+		 * In Java, reduce() is a terminal operation in the Stream API that performs a reduction on the elements of the stream. It combines all elements of the stream into a single result. The reduce() operation takes two parameters:
+
+An identity value: This is the initial value of the reduction operation.
+An accumulator function: This function takes two parameters (accumulated value and current element) and returns a new accumulated value.
+*/
 		BigInteger b = Stream.iterate(BigInteger.ONE, i -> i.add(BigInteger.ONE)).limit(9).reduce(BigInteger.ONE,
 				BigInteger::multiply);
 
 		System.out.println("factorial====>" + b);
+		
+		Long result = Stream.iterate(1L, ele->ele+1).limit(9).reduce(1L,(first,second)->first*second);
+		System.out.println("OTHER WAY ====>result=====>"+result);
 
 		System.out.println("***************************************************************");
 
 		List<String> words = Arrays.asList("Hello", "World", "Java", "Streams");
+		/*
+		 * flatMap() is a method in the Java Stream API that transforms each element of a 
+		 * stream of collections (or other kinds of elements that can be transformed into streams) 
+		 * into a stream of elements, and then flattens the resulting streams into a single stream.
+		 * 
+		 * */
 
 		List<String> letters = words.stream().flatMap(word -> Stream.of(word.split(""))) // Splits each word into
 																							// individual letters
 				.collect(Collectors.toList());
+		
 
 		System.out.println(letters);
+		
+		System.out.println("***************************************************************");
+		 List<List<Integer>> nestedList = Arrays.asList(
+		            Arrays.asList(1, 2, 3),
+		            Arrays.asList(4, 5, 6),
+		            Arrays.asList(7, 8, 9)
+		        );
 
+		        List<Integer> flattenedList = nestedList.stream()
+		                                                .flatMap(List::stream)
+		                                                .collect(Collectors.toList());
+
+		        System.out.println(flattenedList); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+		        
+		      
 		System.out.println("***************************************************************");
 		List<Product> productsList = new ArrayList<Product>();
 		// Adding Products

@@ -15,8 +15,8 @@ package javalearning.JAVA8;
  * Methods which are defined inside the interface and tagged with default are
  * known as default methods. These methods are non-abstract methods 2)You can
  * override default method also to provide more specific implementation for the
- * method -- check this line 3)static method and default method cannot be
- * override Abstract Class vs Java 8 Interface After having default and static
+ * method 3)static method and default method cannot be
+ * override4) Abstract Class vs Java 8 Interface After having default and static
  * methods inside the interface, we think about the need of abstract class in
  * Java. An interface and an abstract class is almost similar except that you
  * can create constructor in the abstract class whereas you can't do this in
@@ -26,11 +26,11 @@ interface TestInterface {
 
 	// Default method
 	default void say() {
-		System.out.println("parent(interface) say default method called");
+		System.out.println("PPPPPP----parent(interface) say default method called");
 	}
 
 	static void test() {
-		System.out.println("parent(interface) test static method called");
+		System.out.println("PPPPPP----parent(interface) test static method called");
 	}
 
 	// Abstract method
@@ -43,19 +43,19 @@ class ImplementInterfaceTest implements TestInterface {
 
 	@Override
 	public void sayMore(String msg) {
-		System.out.println("inside saymore ImplementInterfaceTest");
+		System.out.println("CCCCCCC----inside saymore ImplementInterfaceTest");
 
 	}
 
 	@Override
 	public void say() {
-		System.out.println("inside say default method ImplementInterfaceTest");
+		System.out.println("CCCCCCC----inside say default method ImplementInterfaceTest");
 
 	}
 	
 	
 	public static void test() {
-		System.out.println("inside test static method ImplementInterfaceTest");
+		System.out.println("CCCCCCC----inside test static method ImplementInterfaceTest");
 
 	}
 
@@ -84,11 +84,11 @@ public class DefaultMethodsInInterface {
 	}
 
 	static void test() {
-		System.out.println("child test static method  called");
+		System.out.println("CCCCCCC----child test static method  called");
 	}
 
 	public void say() { // implementing abstract method
-		System.out.println("child say default method called");
+		System.out.println("CCCCCCC----child say default method called");
 	}
 
 }

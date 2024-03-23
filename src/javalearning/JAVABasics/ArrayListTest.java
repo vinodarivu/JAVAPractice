@@ -15,6 +15,7 @@ import java.util.*;
 public class ArrayListTest {
 
     public static void main(String args[]) {
+ 
       String abc[] = new String[] { "A", "B", "C", "D" };  
             // getting the list view of Array 
             List<String> list = Arrays.asList(abc); 

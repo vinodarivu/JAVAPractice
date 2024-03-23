@@ -15,6 +15,21 @@ package javalearning.JAVA8;
 static methods but can contain only one abstract method. It can also declare methods of object class
 2)A functional interface can extends another interface only when it does not have any abstract method.
 3)
+Example 
+java.lang.Runnable
+java.util.concurrent.Callable
+java.util.function.Function
+java.util.function.Predicate
+java.util.function.Consumer
+java.util.function.Supplier
+java.util.function.BiFunction
+java.util.function.BiPredicate
+java.util.function.BiConsumer
+java.util.Comparator
+java.util.stream.Stream
+java.util.stream.IntStream, java.util.stream.LongStream, java.util.stream.DoubleStream
+java.util.Optional (not strictly a functional interface, but often used with lambdas)
+
 
 */
 interface Doable{  
@@ -28,7 +43,7 @@ interface Test extends Doable{
 }
 
 @FunctionalInterface
-interface sayable {
+interface Sayable {
 
     void say(String msg);   // abstract method  
     // It can contain any number of Object class methods.  
@@ -40,7 +55,8 @@ interface sayable {
     boolean equals(Object obj);
 }
 
-public class FunctionalInterfaceTest implements sayable ,Doable{
+public class FunctionalInterfaceTest implements Sayable ,Test{
+	static Test t = (mesg) -> System.out.println("this is lamda experession");
 	public void doIt() {
 		System.out.println("child class");
 	}
@@ -49,7 +65,12 @@ public class FunctionalInterfaceTest implements sayable ,Doable{
     }
 
     public static void main(String[] args) {
-        FunctionalInterfaceTest fie = new FunctionalInterfaceTest();
+    	Sayable fie = new FunctionalInterfaceTest();
         fie.say("Hello there");
+        Test te = new FunctionalInterfaceTest();
+        te.say("Hello there");
+        t.say(null);
+        
     }
+    
 }

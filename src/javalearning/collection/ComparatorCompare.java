@@ -6,6 +6,7 @@
 package javalearning.collection;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -86,6 +87,13 @@ public class ComparatorCompare {
 		hm.put(1, new Student(105, "ZEEVAN", 31));
 		hm.put(5, new Student(105, "Vihaan", 31));
 		hm.put(9, new Student(105, "Agastya", 31));
+		
+		Set<Map.Entry<Integer, Student>> entrySet = hm.entrySet();
+		Collections.sort(new ArrayList<>(entrySet),new NameComparator());
+		for(Map.Entry<Integer, Student> mp : entrySet) {
+			System.out.println(mp.getKey() +","+mp.getValue().getName());
+			
+		}
 
 		System.out.println("==========before Sorting========");
 		Set<Map.Entry<Integer, Student>> hs = hm.entrySet();

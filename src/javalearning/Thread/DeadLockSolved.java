@@ -14,7 +14,7 @@ public class DeadLockSolved {
 				synchronized (b) {
 					try {
 						/* Adding delay so that both threads can start trying to lock resources */
-						Thread.sleep(100);
+						Thread.sleep(10000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -31,6 +31,10 @@ public class DeadLockSolved {
 			public void run() {
 				synchronized (b) {
 					// Thread-2 have resource2 but need resource1 also
+					try {Thread.sleep(1000);
+					}catch(InterruptedException e) {
+						
+					}
 					synchronized (a) {
 						System.out.println("In block 2");
 					}

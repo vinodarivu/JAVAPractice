@@ -28,6 +28,9 @@ import java.util.stream.Stream;
 
 3) Body: It contains expressions and statements for lambda expression.
 
+***Imp points
+*we can write compact and readable code 
+
  */
 @FunctionalInterface // it is optional
 interface Drawable{
